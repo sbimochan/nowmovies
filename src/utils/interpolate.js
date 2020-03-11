@@ -1,3 +1,5 @@
+import { fetchExternalIds } from "src/services/apiServices";
+
 /**
  * Build supplied string by interpolating properties inside delimiters('{ }') with the given parameters.
  *
@@ -19,4 +21,18 @@ export function interpolate(str, params) {
   }
 
   return formattedString;
+}
+
+export async function findImdbId(id, media_type) {
+  const externalId = await fetchExternalIds(id, media_type);
+  const imdbId = externalId.data.imdb_id;
+  
+  return imdbId;
+}
+
+export async function getImdbUrl(tmdbid, mediaType) {
+  const imdbId = await findImdbId(tmdbid,mediaType);
+  const url = 'https://imdb.com/title/'+imdbId;
+  
+  return url;
 }
