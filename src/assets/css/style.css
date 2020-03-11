@@ -48,6 +48,14 @@ body {
   color: #67686a;
 }
 
+.genre-list::after {
+  content: " \2022"
+}
+
+.genre-list:last-of-type::after {
+  display: none;
+}
+
 .movie-overview {
   font-size: 12px;
   color: #808692
@@ -65,4 +73,15 @@ body {
   color: whitesmoke;
   text-decoration: none;
   padding-left: 5px;
+}
+
+.watch-trailer a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 12px;
+}
+
+.heading {
+  color: whitesmoke;
+  text-align: center;
 }
