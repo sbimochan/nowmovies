@@ -58,14 +58,17 @@ class Dashboard extends Component {
   render() {
 
     return (
-      <div className="container">
-        <DashboardContext.Provider value={this.state.genres}>
-          {this.state.shows &&<MediaColumn results={this.state.shows} title='Trending TV Shows'/>}
-          {this.state.movies && <MediaColumn results={this.state.movies} title='Trending Movies'/>}
-        </DashboardContext.Provider>
-      </div>
-
-    )
+			<div className="container">
+				<DashboardContext.Provider value={this.state.genres}>
+					{this.state.shows && (
+						<MediaColumn results={this.state.shows} title="Trending TV Shows" />
+					)}
+					{this.state.movies && (
+						<MediaColumn results={this.state.movies} title="Trending Movies" />
+					)}
+				</DashboardContext.Provider>
+			</div>
+		);
   }
 
 }

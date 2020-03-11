@@ -4,7 +4,7 @@ import {PropTypes} from 'prop-types';
 
 const MediaColumn = ({ results, title }) => (
     <div className="bar">
-      <span>{title}</span>
+      <h2 className="heading">{title}</h2>
       <div className="row">
         {results.map((result,index)=> {
           return <MediaCard info={result} key={index}/>

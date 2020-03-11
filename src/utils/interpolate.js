@@ -36,3 +36,10 @@ export async function getImdbUrl(tmdbid, mediaType) {
   
   return url;
 }
+
+export function youtubeSearchQueryGenerator(mediaName) {
+	return `https://www.youtube.com/results?search_query=${mediaName.replace(
+		/ /g,
+		'+'
+	)}+1080p+trailer`;
+}
