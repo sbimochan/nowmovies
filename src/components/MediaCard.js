@@ -1,8 +1,8 @@
 import React from 'react';
 
 const MediaCard = () => (
-  <div class="card">
-    
+  <div className="card">
+
   </div>
 )
 

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { projectConfig } from '../projectConfig';
 
 const http = axios.create({
-  baseURL: projectConfig.baseURI,
+  baseURL: projectConfig.apiURI,
   headers: {
     'Content-Type': 'application/json'
   }
