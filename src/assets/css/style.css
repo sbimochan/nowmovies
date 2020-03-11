@@ -86,4 +86,10 @@ body {
 .heading {
   color: whitesmoke;
   text-align: center;
+  padding: 10px 0;
+}
+
+.main-logo {
+  display: flex;
+  position: absolute;
 }
