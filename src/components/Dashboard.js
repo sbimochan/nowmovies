@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import MediaColumn from './MediaColumn';
 import {fetchTrendingMedia, fetchGenres} from 'src/services/apiServices';
 
+export const DashboardContext = React.createContext();
 class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -58,8 +59,10 @@ class Dashboard extends Component {
 
     return (
       <div className="container">
-        {this.state.shows &&<MediaColumn results={this.state.shows} title='Trending TV Shows'/>}
-        {this.state.movies && <MediaColumn results={this.state.movies} title='Trending Movies'/>}
+        <DashboardContext.Provider value={this.state.genres}>
+          {this.state.shows &&<MediaColumn results={this.state.shows} title='Trending TV Shows'/>}
+          {this.state.movies && <MediaColumn results={this.state.movies} title='Trending Movies'/>}
+        </DashboardContext.Provider>
       </div>
 
     )
