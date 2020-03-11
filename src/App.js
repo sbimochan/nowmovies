@@ -1,36 +1,12 @@
 import React from 'react';
+import Dashboard from 'src/components/Dashboard';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <div class="container-wrap">
-          <div class="container">
-            <div class="bar">
-              <div class="row">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-              </div>
-
-            </div>
-            <div class="bar">
-              <div class="row">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-              </div>
-
-            </div>
-          </div>
+            <Dashboard/>
         </div>
       </header>
     </div>
