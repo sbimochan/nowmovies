@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import MediaColumn from './MediaColumn';
-import { fetchTrendingMedia } from 'src/services/apiServices';
+import {fetchTrendingMedia} from 'src/services/apiServices';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -11,33 +11,41 @@ class Dashboard extends Component {
       shows: {}
     }
   }
-  fetchMovies = async () => {
+  fetchMovies = async() => {
     try {
-      const movieData = await fetchTrendingMedia('movie',this.state.timeWindow);
-      console.log(movieData);
+      const { data } = await fetchTrendingMedia('movie', this.state.timeWindow);
+      if (data && data.results) {
+        return data.results;
+      }
     } catch (error) {
       console.log(error)
     }
   }
 
-  fetchShows = async () => {
+  fetchShows = async() => {
     try {
-      const movieData = await fetchTrendingMedia('tv',this.state.timeWindow);
-      console.log(movieData);
+      const { data } = await fetchTrendingMedia('tv', this.state.timeWindow);
+      if (data && data.results) {
+        return data.results;
+      }
     } catch (error) {
       console.log(error)
     }
   }
-  componentDidMount() {
-    Promise.all([this.fetchMovies(),this.fetchShows()])
+  async componentDidMount() {
+    const [movies, shows] = await Promise.all([
+      this.fetchMovies(),
+      this.fetchShows()
+    ]);
+    this.setState({movies: movies, shows: shows});
   }
 
   render() {
 
     return (
       <div className="container">
-        <MediaColumn/>
-        <MediaColumn/>
+        {this.state.shows &&<MediaColumn results={this.state.shows} title='Trending TV Shows'/>}
+        {this.state.movies && <MediaColumn results={this.state.movies} title='Trending Movies'/>}
       </div>
 
     )
