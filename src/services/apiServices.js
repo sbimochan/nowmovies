@@ -8,3 +8,10 @@ export async function fetchTrendingMedia(mediaType, timeWindow) {
 
   return response;
 }
+
+export async function fetchGenres() {
+  const url = projectConfig.genreUrl;
+  const response = await http.get(url);
+
+  return response;
+}

@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import MediaColumn from './MediaColumn';
-import {fetchTrendingMedia} from 'src/services/apiServices';
+import {fetchTrendingMedia, fetchGenres} from 'src/services/apiServices';
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       timeWindow: 'day',
-      movies: {},
-      shows: {}
+      movies: [],
+      shows: [],
+      genres: []
     }
   }
   fetchMovies = async() => {
@@ -32,12 +33,25 @@ class Dashboard extends Component {
       console.log(error)
     }
   }
+  storeGenres = async() => {
+    try {
+      const {data} = await fetchGenres();
+      if (data) {
+        return data.genres;
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
   async componentDidMount() {
-    const [movies, shows] = await Promise.all([
+    const [movies, shows, genres] = await Promise.all([
       this.fetchMovies(),
-      this.fetchShows()
+      this.fetchShows(),
+      this.storeGenres()
     ]);
-    this.setState({movies: movies, shows: shows});
+    this.setState({movies: movies, shows: shows, genres: genres});
   }
 
   render() {

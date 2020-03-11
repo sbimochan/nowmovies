@@ -6,7 +6,7 @@ const MediaColumn = ({ results, title }) => (
     <div className="bar">
       <span>{title}</span>
       <div className="row">
-        {Object.values(results).map((result,index)=> {
+        {results.map((result,index)=> {
           return <MediaCard info={result} key={index}/>
         })}
       </div>
@@ -14,10 +14,7 @@ const MediaColumn = ({ results, title }) => (
   );
 
 MediaColumn.propTypes = {
-  results: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.object
-  ]),
+  results: PropTypes.array,
   title: PropTypes.string
 }
 export default MediaColumn;
