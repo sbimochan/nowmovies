@@ -1,7 +1,6 @@
 {
   "name": "trending-movies-and-shows",
   "version": "0.1.0",
-  "homepage": "https://sbimochan.github.io/trending-movies-and-shows",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
