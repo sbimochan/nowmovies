@@ -43,3 +43,7 @@ export function youtubeSearchQueryGenerator(mediaName) {
 		'+'
 	)}+1080p+trailer`;
 }
+
+export function ytsQuery(mediaName) {
+	return `https://yts.mx/browse-movies/${encodeURIComponent(mediaName.trim())}/all/all/0/latest`;
+}

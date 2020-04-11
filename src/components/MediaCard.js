@@ -3,7 +3,7 @@ import ShowName from 'src/components/ShowName';
 import MovieName from 'src/components/MovieName';
 import { imgUrlMaker } from '../utils/imgUrlMaker';
 import { DashboardContext } from 'src/components/Dashboard';
-import { getImdbUrl, youtubeSearchQueryGenerator } from 'src/utils/interpolate';
+import { getImdbUrl, youtubeSearchQueryGenerator, ytsQuery } from 'src/utils/interpolate';
 
 class MediaCard extends Component {
 	constructor(props) {
@@ -11,7 +11,8 @@ class MediaCard extends Component {
 		this.state = {
 			info: props.info,
 			imdbUrl: '',
-			youtubeUrl: ''
+			youtubeUrl: '',
+			torrentLink: ''
 		};
 	}
 	makeImdbUrl = async () => {
@@ -24,18 +25,19 @@ class MediaCard extends Component {
 		});
 	};
 
-	makeYoutubeTrailer = () => {
-		const youtubeUrl = youtubeSearchQueryGenerator(
-			this.state.info.title || this.state.info.name
-		);
+	makeSearchQueries = () => {
+		const mediaName = this.state.info.title || this.state.info.name;
+		const youtubeUrl = youtubeSearchQueryGenerator(mediaName);
+		const ytsUrl = ytsQuery(mediaName)
 		this.setState({
-			youtubeUrl: youtubeUrl
+			youtubeUrl: youtubeUrl,
+			torrentLink: ytsUrl
 		});
 	};
 
 	componentDidMount() {
 		this.makeImdbUrl();
-		this.makeYoutubeTrailer();
+		this.makeSearchQueries();
 	}
 	render() {
 		return (
@@ -88,14 +90,23 @@ class MediaCard extends Component {
 										...
 									</a>
 								</article>
-								<div className="watch-trailer">
+								<div className="watch-trailer d-flex">
 									<a
 										href={this.state.youtubeUrl}
 										rel="noopener noreferrer"
 										target="_blank"
+										className="button fill"
 									>
 										Watch Trailer
 									</a>
+									{this.state.info.media_type === 'movie' && <a
+										href={this.state.torrentLink}
+										rel="noopener noreferrer"
+										target="_blank"
+										className="button ml-10 fill"
+									>
+										Torrent Link
+									</a>}
 								</div>
 							</div>
 						</div>

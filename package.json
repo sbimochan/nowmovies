@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "gh-pages": "^2.2.0",
     "http-status": "^1.4.2",
+    "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
