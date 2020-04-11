@@ -9,6 +9,8 @@
     "axios": "^0.19.2",
     "gh-pages": "^2.2.0",
     "http-status": "^1.4.2",
+    "node-sass": "^4.13.1",
+    "prettier": "^2.0.4",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
@@ -22,7 +24,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "pretty": "prettier --write \"./**/*.{js,jsx,json}\""
   },
   "eslintConfig": {
     "extends": "react-app"

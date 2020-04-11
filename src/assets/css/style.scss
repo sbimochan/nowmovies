@@ -2,28 +2,33 @@ body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.5;
 }
-.container-wrap{
+.container-wrap {
   background-color: #272c34;
 }
-.container{
+.container {
   max-width: 900px;
   margin: 0 auto;
   width: 100%;
+}
+
+.d-flex {
   display: flex;
 }
-.bar{
+
+.bar {
   padding: 0 8px;
   flex-basis: 50%;
   max-width: 50%;
 }
 
-.card{
+.card {
   width: 100%;
   background-color: #32363d;
   margin-bottom: 15px;
   color: whitesmoke;
   display: flex;
   align-items: flex-start;
+  height: 200px;
 }
 
 .row {
@@ -50,7 +55,7 @@ body {
 }
 
 .genre-list::after {
-  content: " \2022"
+  content: ' \2022';
 }
 
 .genre-list:last-of-type::after {
@@ -59,7 +64,7 @@ body {
 
 .movie-overview {
   font-size: 12px;
-  color: #808692
+  color: #808692;
 }
 
 .vote {
@@ -92,4 +97,43 @@ body {
 .main-logo {
   display: flex;
   position: absolute;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  color: var(--color);
+  border-color: var(--color);
+  transition: 0.25s;
+
+  &:hover,
+  &:focus {
+    border-color: var(--hover);
+    color: #fff;
+  }
+}
+
+// Animate the size, inside
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 0 0 2em var(--hover);
+}
+
+$colors: (
+  fill: #566e71
+);
+
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 45deg)};
+  }
 }
