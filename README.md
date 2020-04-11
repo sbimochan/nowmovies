@@ -1,4 +1,4 @@
-# Coding Challenge
+# Now Movies
 
 Displays recent movies and TV shows
 
