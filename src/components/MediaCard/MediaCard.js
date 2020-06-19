@@ -94,7 +94,7 @@ class MediaCard extends Component {
               <div
                 className={classes.blurBackground}
                 style={{
-                  backgroundImage: `url(${imgUrlMaker(this.state.info.backdrop_path)})`
+                  backgroundImage: `url(${imgUrlMaker(this.state.info.backdrop_path || this.state.info.poster_path)})`
                 }}
               />
               <div className="watch-trailer d-flex">
@@ -133,6 +133,6 @@ class MediaCard extends Component {
 }
 
 MediaCard.propTypes = {
-  movie: PropTypes.object.isRequired
+  info: PropTypes.object.isRequired
 };
 export default withStyles(styles)(MediaCard);
