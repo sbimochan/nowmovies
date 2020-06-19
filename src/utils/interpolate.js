@@ -43,5 +43,5 @@ export function youtubeSearchQueryGenerator(mediaName) {
 }
 
 export function ytsQuery(mediaName) {
-  return `https://yts.mx/browse-movies/${encodeURIComponent(mediaName.trim())}/all/all/0/latest`;
+  return `https://yts.mx/browse-movies/${encodeURIComponent(mediaName.trim())}/all/all/0/latest/0/all`;
 }

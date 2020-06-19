@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import GetAppIcon from '@material-ui/icons/GetApp';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import { DashboardContext } from 'components/Dashboard';
-import { withStyles, Paper, Typography } from '@material-ui/core';
+import { withStyles, Paper, Typography, Tooltip } from '@material-ui/core';
 import { getImdbUrl, youtubeSearchQueryGenerator, ytsQuery } from 'utils/interpolate';
 
 import styles from './styles';
@@ -109,16 +109,18 @@ class MediaCard extends Component {
                 >
                   Watch Trailer
                 </Button>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  startIcon={<GetAppIcon />}
-                  href={this.state.torrentLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Download Torrent
-                </Button>
+                <Tooltip arrow title="Heuristic. Might show empty results.">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    startIcon={<GetAppIcon />}
+                    href={this.state.torrentLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download Torrent
+                  </Button>
+                </Tooltip>
               </div>
             </Paper>
           );
