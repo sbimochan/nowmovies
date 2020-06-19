@@ -1,8 +1,11 @@
 {
-  "name": "trending-movies-and-shows",
-  "version": "0.1.0",
+  "name": "now-movies",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.9.12",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.53",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -17,7 +20,16 @@
     "react-scripts": "3.4.0"
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-leapfrog": "^3.0.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "gh-pages": "^2.2.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.3",
+    "mutationobserver-shim": "^0.3.5",
+    "prettier": "^2.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -25,10 +37,31 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build",
-    "pretty": "prettier --write \"./**/*.{js,jsx,json}\""
+    "pretty": "prettier --write \"./**/*.{js,jsx,json}\"",
+    "eslint": "eslint src",
+    "eslint:fix": "eslint --fix src",
+    "lint": "yarn prettier && yarn eslint",
+    "lint:fix": "yarn prettier:fix && yarn eslint:fix",
+    "prettier": "prettier \"{src,api}/**/*.js\" \"{src,api}/**/*.css\"",
+    "prettier:fix": "prettier --write \"{src,api}/**/*.js\" \"{src,api}/**/*.css\"",
+    "precommit": "lint-staged"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{md,yml,yml,json,css}": [
+      "prettier --write"
+    ]
   },
   "browserslist": {
     "production": [

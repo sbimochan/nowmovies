@@ -1,4 +1,5 @@
-import { fetchExternalIds } from "src/services/apiServices";
+/* eslint-disable camelcase */
+import { fetchExternalIds } from "services/apiServices";
 
 /**
  * Build supplied string by interpolating properties inside delimiters('{ }') with the given parameters.

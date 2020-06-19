@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import ShowName from "src/components/ShowName";
-import MovieName from "src/components/MovieName";
+import ShowName from "components/ShowName";
+import MovieName from "components/MovieName";
 import { imgUrlMaker } from "../utils/imgUrlMaker";
-import { DashboardContext } from "src/components/Dashboard";
+import { DashboardContext } from "components/Dashboard";
 import {
   getImdbUrl,
   youtubeSearchQueryGenerator,
   ytsQuery,
-} from "src/utils/interpolate";
+} from "utils/interpolate";
 
 class MediaCard extends Component {
   constructor(props) {
@@ -24,6 +24,7 @@ class MediaCard extends Component {
       this.state.info.id,
       this.state.info.media_type
     );
+
     this.setState({
       imdbUrl: imdbUrl,
     });
@@ -33,6 +34,7 @@ class MediaCard extends Component {
     const mediaName = this.state.info.title || this.state.info.name;
     const youtubeUrl = youtubeSearchQueryGenerator(mediaName);
     const ytsUrl = ytsQuery(mediaName);
+
     this.setState({
       youtubeUrl: youtubeUrl,
       torrentLink: ytsUrl,
@@ -53,6 +55,7 @@ class MediaCard extends Component {
           const filteredGenreNames = filteredGenres.map(
             (genres) => genres.name
           );
+
           return (
             <div className="card">
               <a

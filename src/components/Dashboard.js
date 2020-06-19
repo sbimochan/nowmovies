@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import MediaColumn from "./MediaColumn";
-import { fetchTrendingMedia, fetchGenres } from "src/services/apiServices";
+import { fetchTrendingMedia, fetchGenres } from "services/apiServices";
 
 export const DashboardContext = React.createContext();
 class Dashboard extends Component {
@@ -16,32 +16,35 @@ class Dashboard extends Component {
   fetchMovies = async () => {
     try {
       const { data } = await fetchTrendingMedia("movie", this.state.timeWindow);
+
       if (data && data.results) {
         return data.results;
       }
     } catch (error) {
-      console.log(error);
+      void 0;
     }
   };
 
   fetchShows = async () => {
     try {
       const { data } = await fetchTrendingMedia("tv", this.state.timeWindow);
+
       if (data && data.results) {
         return data.results;
       }
     } catch (error) {
-      console.log(error);
+      void 0;
     }
   };
   storeGenres = async () => {
     try {
       const { data } = await fetchGenres();
+
       if (data) {
         return data.genres;
       }
     } catch (error) {
-      console.log(error);
+      void 0;
     }
   };
 
@@ -51,6 +54,7 @@ class Dashboard extends Component {
       this.fetchShows(),
       this.storeGenres(),
     ]);
+
     this.setState({ movies: movies, shows: shows, genres: genres });
   }
 
