@@ -133,7 +133,9 @@ class MediaCard extends Component {
                   color="primary"
                   className={classes.marginRight20}
                   startIcon={<YouTubeIcon />}
-                  href={this.state.yogenutubeUrl}
+                  href={this.state.youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Watch Trailer
                 </Button>
@@ -142,6 +144,8 @@ class MediaCard extends Component {
                   color="primary"
                   startIcon={<GetAppIcon />}
                   href={this.state.torrentLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Download Torrent
                 </Button>

@@ -41,8 +41,8 @@
     "eslint:fix": "eslint --fix src",
     "lint": "yarn prettier && yarn eslint",
     "lint:fix": "yarn prettier:fix && yarn eslint:fix",
-    "prettier": "prettier \"{src,api}/**/*.js\" \"{src,api}/**/*.css\"",
-    "prettier:fix": "prettier --write \"{src,api}/**/*.js\" \"{src,api}/**/*.css\"",
+    "prettier": "prettier --single-quote \"{src,api}/**/*.js\" \"{src,api}/**/*.css\"",
+    "prettier:fix": "prettier --single-quote --write \"{src,api}/**/*.js\" \"{src,api}/**/*.css\"",
     "precommit": "lint-staged"
   },
   "eslintConfig": {
