@@ -1,5 +1,5 @@
-export const textTruncate = (text = "", length = 250) => {
-  const ending = "...";
+export const textTruncate = (text = '', length = 250) => {
+  const ending = '...';
 
   if (length === null) {
     length = 100;
