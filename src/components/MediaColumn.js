@@ -1,10 +1,10 @@
-import React, { Suspense } from 'react';
-import { PropTypes } from 'prop-types';
-import Skeleton from '@material-ui/lab/Skeleton';
-import { Box } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { Suspense } from "react";
+import { PropTypes } from "prop-types";
+import Skeleton from "@material-ui/lab/Skeleton";
+import { Box } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
-const MediaCard = React.lazy(() => import('components/MediaCard/MediaCard'));
+const MediaCard = React.lazy(() => import("components/MediaCard/MediaCard"));
 
 const MediaColumn = ({ results, title }) => (
   <div className="bar">
@@ -24,7 +24,7 @@ const MediaColumn = ({ results, title }) => (
 const CardSkeleton = () => {
   const useStyles = makeStyles(() => ({
     root: {
-      backgroundColor: '#353940',
+      backgroundColor: "#353940",
     },
   }));
   const classes = useStyles();

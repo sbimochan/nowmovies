@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
-import ShowName from 'components/ShowName';
-import MovieName from 'components/MovieName';
-import { imgUrlMaker } from '../utils/imgUrlMaker';
-import { DashboardContext } from 'components/Dashboard';
+import React, { Component } from "react";
+import ShowName from "components/ShowName";
+import MovieName from "components/MovieName";
+import { imgUrlMaker } from "../utils/imgUrlMaker";
+import { DashboardContext } from "components/Dashboard";
 import {
   getImdbUrl,
   youtubeSearchQueryGenerator,
   ytsQuery,
-} from 'utils/interpolate';
+} from "utils/interpolate";
 
 class MediaCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       info: props.info,
-      imdbUrl: '',
-      youtubeUrl: '',
-      torrentLink: '',
+      imdbUrl: "",
+      youtubeUrl: "",
+      torrentLink: "",
     };
   }
   makeImdbUrl = async () => {
@@ -75,7 +75,7 @@ class MediaCard extends Component {
                   <span className="out-of-10">/10</span>
                 </div>
                 <div className="media-title">
-                  {this.state.info.media_type === 'movie' ? (
+                  {this.state.info.media_type === "movie" ? (
                     <MovieName info={this.state.info} />
                   ) : (
                     <ShowName info={this.state.info} />
@@ -108,7 +108,7 @@ class MediaCard extends Component {
                   >
                     Watch Trailer
                   </a>
-                  {this.state.info.media_type === 'movie' && (
+                  {this.state.info.media_type === "movie" && (
                     <a
                       href={this.state.torrentLink}
                       rel="noopener noreferrer"
