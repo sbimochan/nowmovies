@@ -1,31 +1,31 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import ShowName from 'components/ShowName';
-import MovieName from 'components/MovieName';
-import Button from '@material-ui/core/Button';
-import GetAppIcon from '@material-ui/icons/GetApp';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import { DashboardContext } from 'components/Dashboard';
-import { withStyles, Paper, Typography } from '@material-ui/core';
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import ShowName from "components/ShowName";
+import MovieName from "components/MovieName";
+import Button from "@material-ui/core/Button";
+import GetAppIcon from "@material-ui/icons/GetApp";
+import YouTubeIcon from "@material-ui/icons/YouTube";
+import { DashboardContext } from "components/Dashboard";
+import { withStyles, Paper, Typography } from "@material-ui/core";
 import {
   getImdbUrl,
   youtubeSearchQueryGenerator,
   ytsQuery,
-} from 'utils/interpolate';
+} from "utils/interpolate";
 
-import styles from './styles';
+import styles from "./styles";
 
-import { textTruncate } from '../../utils/utils';
-import { imgUrlMaker } from '../../utils/imgUrlMaker';
+import { textTruncate } from "../../utils/utils";
+import { imgUrlMaker } from "../../utils/imgUrlMaker";
 
 class MediaCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       info: props.info,
-      imdbUrl: '',
-      youtubeUrl: '',
-      torrentLink: '',
+      imdbUrl: "",
+      youtubeUrl: "",
+      torrentLink: "",
     };
   }
 
@@ -77,7 +77,7 @@ class MediaCard extends Component {
                     variant="h1"
                     color="inherit"
                   >
-                    {this.state.info.media_type === 'movie' ? (
+                    {this.state.info.media_type === "movie" ? (
                       <MovieName info={this.state.info} />
                     ) : (
                       <ShowName info={this.state.info} />
@@ -123,7 +123,7 @@ class MediaCard extends Component {
                 className={classes.blurBackground}
                 style={{
                   backgroundImage: `url(${imgUrlMaker(
-                    this.state.info.poster_path
+                    this.state.info.backdrop_path
                   )})`,
                 }}
               />
