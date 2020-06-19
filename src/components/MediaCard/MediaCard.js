@@ -100,8 +100,9 @@ class MediaCard extends Component {
               <div className="watch-trailer d-flex">
                 <Button
                   variant="contained"
-                  color="primary"
+                  color="secondary"
                   className={classes.marginRight20}
+                  classes={{ containedSecondary: classes.youtubeRed }}
                   startIcon={<YouTubeIcon />}
                   href={this.state.youtubeUrl}
                   target="_blank"
@@ -109,10 +110,11 @@ class MediaCard extends Component {
                 >
                   Watch Trailer
                 </Button>
-                <Tooltip arrow title="Heuristic. Might show empty results.">
+                <Tooltip classes={{ tooltip: classes.tooltip }} arrow title="Heuristic. Might show empty results.">
                   <Button
-                    variant="contained"
+                    variant="outlined"
                     color="primary"
+                    classes={{ outlinedPrimary: classes.ytsGreen }}
                     startIcon={<GetAppIcon />}
                     href={this.state.torrentLink}
                     target="_blank"

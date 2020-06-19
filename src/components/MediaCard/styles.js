@@ -113,5 +113,15 @@ export default (theme) => ({
   },
   marginRight20: {
     marginRight: 20
+  },
+  youtubeRed: {
+    backgroundColor: '#FF0000'
+  },
+  ytsGreen: {
+    color: '#6ac045',
+    border: '1px solid #6ac045'
+  },
+  tooltip: {
+    fontSize: 14
   }
 });
