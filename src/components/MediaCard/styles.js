@@ -9,8 +9,8 @@ export default (theme) => ({
     transition: 'all 0.4s',
     '&:hover': {
       transform: 'scale(1.02)',
-      transition: 'all 0.4s',
-    },
+      transition: 'all 0.4s'
+    }
   },
   infoSection: {
     position: 'relative',
@@ -19,48 +19,48 @@ export default (theme) => ({
     backgroundBlendMode: 'multiply',
     background: 'linear-gradient(to right, #0d0d0c 50%, transparent 100%)',
     zIndex: 2,
-    borderRadius: 10,
+    borderRadius: 10
   },
   movieHeader: {
     position: 'relative',
-    padding: theme.spacing(3),
+    padding: theme.spacing(2),
     height: '40%',
-    width: '60%',
+    width: '60%'
   },
   movieTitle: {
     fontSize: '25px',
     fontWeight: 400,
-    textTransform: 'capitalize',
+    textTransform: 'capitalize'
   },
   director: {
     color: '#9ac7fa',
     fontWeight: '500',
     fontSize: '16px',
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(1)
   },
   duration: {
     display: 'inline-block',
     marginTop: theme.spacing(2),
     padding: theme.spacing(1),
-    border: '1px solid rgba(255,255,255,0.13)',
+    border: '1px solid rgba(255,255,255,0.13)'
   },
   genre: {
     display: 'inline-block',
     color: '#cee4fd',
-    marginLeft: theme.spacing(2),
+    marginLeft: theme.spacing(2)
   },
   description: {
     padding: theme.spacing(3),
     height: '50%',
-    width: '50%',
+    width: '50%'
   },
   descriptionText: {
-    color: '#cfd6e1',
+    color: '#cfd6e1'
   },
   footer: {
     height: '10%',
     paddingLeft: theme.spacing(2),
-    paddingBottom: theme.spacing(3),
+    paddingBottom: theme.spacing(3)
   },
   icons: {
     display: 'inline-block',
@@ -72,8 +72,8 @@ export default (theme) => ({
       color: 'rgba(255, 255, 255, 0.8)',
       transform: 'scale(1.25)',
       transition: 'all 0.3s',
-      transitionDelay: '0.15s',
-    },
+      transitionDelay: '0.15s'
+    }
   },
   blurBackground: {
     position: 'absolute',
@@ -84,7 +84,7 @@ export default (theme) => ({
     backgroundSize: 'cover !important',
     borderRadius: 11,
     width: '80%',
-    backgroundPosition: '-100% 10% !important',
+    backgroundPosition: '-100% 10% !important'
   },
 
   [theme.breakpoints.down('sm')]: {
@@ -92,27 +92,36 @@ export default (theme) => ({
     movieCard: {
       width: '90%',
       margin: '0 auto',
-      height: 'auto',
+      height: 'auto'
     },
     blurBackground: {
       width: '100%',
-      backgroundPosition: '50% 50% !important',
+      backgroundPosition: '50% 50% !important'
     },
     movieHeader: {
       width: '100%',
-      marginTop: theme.spacing(3),
+      marginTop: theme.spacing(3)
     },
     description: {
-      width: '100%',
+      width: '100%'
     },
     infoSection: {
-      background:
-        'linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%)',
+      background: 'linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%)',
       zIndex: 2,
-      borderRadius: 10,
-    },
+      borderRadius: 10
+    }
   },
   marginRight20: {
-    marginRight: 20,
+    marginRight: 20
   },
+  youtubeRed: {
+    backgroundColor: '#FF0000'
+  },
+  ytsGreen: {
+    color: '#6ac045',
+    border: '1px solid #6ac045'
+  },
+  tooltip: {
+    fontSize: 14
+  }
 });

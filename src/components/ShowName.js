@@ -5,7 +5,7 @@ const ShowName = ({ info }) => <span>{info.name}</span>;
 
 ShowName.propTypes = {
   info: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-  }),
+    name: PropTypes.string.isRequired
+  })
 };
 export default ShowName;

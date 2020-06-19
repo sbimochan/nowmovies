@@ -5,7 +5,7 @@ const MovieName = ({ info }) => <span>{info.title}</span>;
 
 MovieName.propTypes = {
   info: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-  }),
+    title: PropTypes.string.isRequired
+  })
 };
 export default MovieName;

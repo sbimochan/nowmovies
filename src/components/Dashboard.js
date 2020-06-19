@@ -10,7 +10,7 @@ class Dashboard extends Component {
       timeWindow: 'day',
       movies: [],
       shows: [],
-      genres: [],
+      genres: []
     };
   }
   fetchMovies = async () => {
@@ -49,11 +49,7 @@ class Dashboard extends Component {
   };
 
   async componentDidMount() {
-    const [movies, shows, genres] = await Promise.all([
-      this.fetchMovies(),
-      this.fetchShows(),
-      this.storeGenres(),
-    ]);
+    const [movies, shows, genres] = await Promise.all([this.fetchMovies(), this.fetchShows(), this.storeGenres()]);
 
     this.setState({ movies: movies, shows: shows, genres: genres });
   }
@@ -62,12 +58,8 @@ class Dashboard extends Component {
     return (
       <div className="container d-flex">
         <DashboardContext.Provider value={this.state.genres}>
-          {this.state.shows && (
-            <MediaColumn results={this.state.shows} title="Trending TV Shows" />
-          )}
-          {this.state.movies && (
-            <MediaColumn results={this.state.movies} title="Trending Movies" />
-          )}
+          {this.state.shows && <MediaColumn results={this.state.shows} title="Trending TV Shows" />}
+          {this.state.movies && <MediaColumn results={this.state.movies} title="Trending Movies" />}
         </DashboardContext.Provider>
       </div>
     );

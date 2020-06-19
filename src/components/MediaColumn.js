@@ -24,26 +24,21 @@ const MediaColumn = ({ results, title }) => (
 const CardSkeleton = () => {
   const useStyles = makeStyles(() => ({
     root: {
-      backgroundColor: '#353940',
-    },
+      backgroundColor: '#353940'
+    }
   }));
   const classes = useStyles();
 
   return (
     <Box>
       <Skeleton variant="text" width={200} classes={{ root: classes.root }} />
-      <Skeleton
-        variant="rect"
-        width={864}
-        height={300}
-        classes={{ root: classes.root }}
-      />
+      <Skeleton variant="rect" width={864} height={300} classes={{ root: classes.root }} />
     </Box>
   );
 };
 
 MediaColumn.propTypes = {
   results: PropTypes.array,
-  title: PropTypes.string,
+  title: PropTypes.string
 };
 export default MediaColumn;

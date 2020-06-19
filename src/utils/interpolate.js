@@ -18,10 +18,7 @@ export function interpolate(str, params) {
   for (const [key, value] of Object.entries(params)) {
     const val = value || '';
 
-    formattedString = formattedString.replace(
-      new RegExp(':' + key, 'gi'),
-      val.toString()
-    );
+    formattedString = formattedString.replace(new RegExp(':' + key, 'gi'), val.toString());
   }
 
   return formattedString;
@@ -42,14 +39,9 @@ export async function getImdbUrl(tmdbid, mediaType) {
 }
 
 export function youtubeSearchQueryGenerator(mediaName) {
-  return `https://www.youtube.com/results?search_query=${mediaName.replace(
-    / /g,
-    '+'
-  )}+1080p+trailer`;
+  return `https://www.youtube.com/results?search_query=${mediaName.replace(/ /g, '+')}+1080p+trailer`;
 }
 
 export function ytsQuery(mediaName) {
-  return `https://yts.mx/browse-movies/${encodeURIComponent(
-    mediaName.trim()
-  )}/all/all/0/latest`;
+  return `https://yts.mx/browse-movies/${encodeURIComponent(mediaName.trim())}/all/all/0/latest/0/all`;
 }

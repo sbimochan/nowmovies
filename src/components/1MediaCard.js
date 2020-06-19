@@ -3,11 +3,7 @@ import ShowName from 'components/ShowName';
 import MovieName from 'components/MovieName';
 import { imgUrlMaker } from '../utils/imgUrlMaker';
 import { DashboardContext } from 'components/Dashboard';
-import {
-  getImdbUrl,
-  youtubeSearchQueryGenerator,
-  ytsQuery,
-} from 'utils/interpolate';
+import { getImdbUrl, youtubeSearchQueryGenerator, ytsQuery } from 'utils/interpolate';
 
 class MediaCard extends Component {
   constructor(props) {
@@ -16,17 +12,14 @@ class MediaCard extends Component {
       info: props.info,
       imdbUrl: '',
       youtubeUrl: '',
-      torrentLink: '',
+      torrentLink: ''
     };
   }
   makeImdbUrl = async () => {
-    const imdbUrl = await getImdbUrl(
-      this.state.info.id,
-      this.state.info.media_type
-    );
+    const imdbUrl = await getImdbUrl(this.state.info.id, this.state.info.media_type);
 
     this.setState({
-      imdbUrl: imdbUrl,
+      imdbUrl: imdbUrl
     });
   };
 
@@ -37,7 +30,7 @@ class MediaCard extends Component {
 
     this.setState({
       youtubeUrl: youtubeUrl,
-      torrentLink: ytsUrl,
+      torrentLink: ytsUrl
     });
   };
 
@@ -49,25 +42,13 @@ class MediaCard extends Component {
     return (
       <DashboardContext.Consumer>
         {(genre) => {
-          const filteredGenres = genre.filter((genreList) =>
-            this.state.info.genre_ids.includes(genreList.id)
-          );
-          const filteredGenreNames = filteredGenres.map(
-            (genres) => genres.name
-          );
+          const filteredGenres = genre.filter((genreList) => this.state.info.genre_ids.includes(genreList.id));
+          const filteredGenreNames = filteredGenres.map((genres) => genres.name);
 
           return (
             <div className="card">
-              <a
-                href={this.state.imdbUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={imgUrlMaker(this.state.info.poster_path)}
-                  alt="shows of thumbnails"
-                  className="thumbnail"
-                />
+              <a href={this.state.imdbUrl} target="_blank" rel="noopener noreferrer">
+                <img src={imgUrlMaker(this.state.info.poster_path)} alt="shows of thumbnails" className="thumbnail" />
               </a>
               <div className="media-body">
                 <div className="vote">
@@ -90,22 +71,12 @@ class MediaCard extends Component {
                 </div>
                 <article className="movie-overview">
                   {this.state.info.overview.substring(0, 200)}
-                  <a
-                    href={this.state.imdbUrl}
-                    rel="noopener noreferrer"
-                    className="read-more"
-                    target="_blank"
-                  >
+                  <a href={this.state.imdbUrl} rel="noopener noreferrer" className="read-more" target="_blank">
                     ...
                   </a>
                 </article>
                 <div className="watch-trailer d-flex">
-                  <a
-                    href={this.state.youtubeUrl}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="button fill"
-                  >
+                  <a href={this.state.youtubeUrl} rel="noopener noreferrer" target="_blank" className="button fill">
                     Watch Trailer
                   </a>
                   {this.state.info.media_type === 'movie' && (

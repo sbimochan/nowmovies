@@ -8,5 +8,5 @@ export const projectConfig = {
   imgURL: 'https://image.tmdb.org/t/p' + posterSize,
   token: process.env.REACT_APP_API_TOKEN,
   trendingUrl: apiUrl + trendingUrl,
-  genreUrl: apiUrl + genres,
+  genreUrl: apiUrl + genres
 };
