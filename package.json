@@ -39,8 +39,6 @@
     "pretty": "prettier --write \"./**/*.{js,jsx,json}\"",
     "eslint": "eslint src",
     "eslint:fix": "eslint --fix src",
-    "lint": "yarn prettier && yarn eslint",
-    "lint:fix": "yarn prettier:fix && yarn eslint:fix",
     "prettier": "prettier --single-quote \"{src,api}/**/*.js\" \"{src,api}/**/*.css\"",
     "prettier:fix": "prettier --single-quote --write \"{src,api}/**/*.js\" \"{src,api}/**/*.css\"",
     "precommit": "lint-staged"
