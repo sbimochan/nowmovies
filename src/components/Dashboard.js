@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import MediaColumn from "./MediaColumn";
-import { fetchTrendingMedia, fetchGenres } from "services/apiServices";
+import React, { Component } from 'react';
+import MediaColumn from './MediaColumn';
+import { fetchTrendingMedia, fetchGenres } from 'services/apiServices';
 
 export const DashboardContext = React.createContext();
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      timeWindow: "day",
+      timeWindow: 'day',
       movies: [],
       shows: [],
       genres: [],
@@ -15,7 +15,7 @@ class Dashboard extends Component {
   }
   fetchMovies = async () => {
     try {
-      const { data } = await fetchTrendingMedia("movie", this.state.timeWindow);
+      const { data } = await fetchTrendingMedia('movie', this.state.timeWindow);
 
       if (data && data.results) {
         return data.results;
@@ -27,7 +27,7 @@ class Dashboard extends Component {
 
   fetchShows = async () => {
     try {
-      const { data } = await fetchTrendingMedia("tv", this.state.timeWindow);
+      const { data } = await fetchTrendingMedia('tv', this.state.timeWindow);
 
       if (data && data.results) {
         return data.results;

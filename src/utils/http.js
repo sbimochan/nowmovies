@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios from 'axios';
 
-import { projectConfig } from "../projectConfig";
+import { projectConfig } from '../projectConfig';
 
 const http = axios.create({
   baseURL: projectConfig.apiURI,
   headers: {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
   },
 });
 

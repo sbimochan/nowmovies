@@ -3,7 +3,7 @@ export const textTruncate = (text, length, ending) => {
     length = 100;
   }
   if (ending === null) {
-    ending = "...";
+    ending = '...';
   }
   if (text.length > length) {
     return text.substring(0, length - ending.length) + ending;
