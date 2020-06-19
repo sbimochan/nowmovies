@@ -13,7 +13,7 @@ const MediaColumn = ({ results, title }) => (
       {results.map((result, index) => {
         return (
           <Suspense fallback={<CardSkeleton />} key={index}>
-            <MediaCard info={result} key={index} />;
+            <MediaCard info={result} key={index} />
           </Suspense>
         );
       })}
