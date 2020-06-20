@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MediaColumn from './MediaColumn';
 import { fetchTrendingMedia, fetchGenres } from 'services/apiServices';
+import { Grid } from '@material-ui/core';
 
 export const DashboardContext = React.createContext();
 class Dashboard extends Component {
@@ -56,12 +57,16 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div className="container d-flex">
+      <Grid container justify="center" alignItems="center" style={{ overflowY: 'hidden' }}>
         <DashboardContext.Provider value={this.state.genres}>
-          {this.state.shows && <MediaColumn results={this.state.shows} title="Trending TV Shows" />}
-          {this.state.movies && <MediaColumn results={this.state.movies} title="Trending Movies" />}
+          <Grid item md={6}>
+            {this.state.shows && <MediaColumn results={this.state.shows} title="Trending TV Shows" />}
+          </Grid>
+          <Grid item md={6}>
+            {this.state.movies && <MediaColumn results={this.state.movies} title="Trending Movies" />}
+          </Grid>
         </DashboardContext.Provider>
-      </div>
+      </Grid>
     );
   }
 }

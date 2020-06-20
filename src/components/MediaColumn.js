@@ -1,14 +1,16 @@
 import React, { Suspense } from 'react';
 import { PropTypes } from 'prop-types';
 import Skeleton from '@material-ui/lab/Skeleton';
-import { Box } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const MediaCard = React.lazy(() => import('components/MediaCard/MediaCard'));
 
 const MediaColumn = ({ results, title }) => (
   <div className="bar">
-    <h2 className="heading">{title}</h2>
+    <Typography variant="h4" className="heading">
+      {title}
+    </Typography>
     <div className="row">
       {results.map((result, index) => {
         return (

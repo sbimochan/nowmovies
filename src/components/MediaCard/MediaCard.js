@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import ShowName from 'components/ShowName';
 import MovieName from 'components/MovieName';
 import Button from '@material-ui/core/Button';
-import GetAppIcon from '@material-ui/icons/GetApp';
+import SearchIcon from '@material-ui/icons/Search';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import { DashboardContext } from 'components/Dashboard';
 import { withStyles, Paper, Typography, Tooltip } from '@material-ui/core';
@@ -89,15 +89,14 @@ class MediaCard extends Component {
                     {textTruncate(this.state.info.overview, 250)}
                   </Typography>
                 </div>
-                <div className={classes.footer}></div>
               </div>
               <div
                 className={classes.blurBackground}
                 style={{
-                  backgroundImage: `url(${imgUrlMaker(this.state.info.backdrop_path)})`
+                  backgroundImage: `url(${imgUrlMaker(this.state.info.backdrop_path || this.state.info.poster_path)})`
                 }}
               />
-              <div className="watch-trailer d-flex">
+              <div className={classes.actions}>
                 <Button
                   variant="contained"
                   color="secondary"
@@ -115,12 +114,12 @@ class MediaCard extends Component {
                     variant="outlined"
                     color="primary"
                     classes={{ outlinedPrimary: classes.ytsGreen }}
-                    startIcon={<GetAppIcon />}
+                    startIcon={<SearchIcon />}
                     href={this.state.torrentLink}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Download Torrent
+                    Search Torrent
                   </Button>
                 </Tooltip>
               </div>
@@ -133,6 +132,6 @@ class MediaCard extends Component {
 }
 
 MediaCard.propTypes = {
-  movie: PropTypes.object.isRequired
+  info: PropTypes.object.isRequired
 };
 export default withStyles(styles)(MediaCard);

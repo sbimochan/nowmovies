@@ -50,7 +50,7 @@ export default (theme) => ({
     marginLeft: theme.spacing(2)
   },
   description: {
-    padding: theme.spacing(3),
+    padding: theme.spacing(2),
     height: '50%',
     width: '50%'
   },
@@ -91,8 +91,8 @@ export default (theme) => ({
     fullWidth: { width: '100%' },
     movieCard: {
       width: '90%',
-      margin: '0 auto',
-      height: 'auto'
+      margin: '0 auto'
+      // height: 'auto'
     },
     blurBackground: {
       width: '100%',
@@ -103,13 +103,21 @@ export default (theme) => ({
       marginTop: theme.spacing(3)
     },
     description: {
-      width: '100%'
+      width: '80%',
+      maxHeight: 100,
+      overflow: 'hidden'
     },
     infoSection: {
       background: 'linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%)',
       zIndex: 2,
       borderRadius: 10
+    },
+    ytsGreen: {
+      display: 'none'
     }
+    // actions: {
+    //   left: '16px !important'
+    // }
   },
   marginRight20: {
     marginRight: 20
@@ -123,5 +131,11 @@ export default (theme) => ({
   },
   tooltip: {
     fontSize: 14
+  },
+  actions: {
+    position: 'absolute',
+    zIndex: 3,
+    left: 16,
+    bottom: 10
   }
 });
