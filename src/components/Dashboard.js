@@ -60,10 +60,10 @@ class Dashboard extends Component {
       <Grid container justify="center" alignItems="center" style={{ overflowY: 'hidden' }}>
         <DashboardContext.Provider value={this.state.genres}>
           <Grid item md={6}>
-            {this.state.shows && <MediaColumn results={this.state.shows} title="Trending TV Shows" />}
+            {this.state.movies && <MediaColumn results={this.state.movies} title="Trending Movies" />}
           </Grid>
           <Grid item md={6}>
-            {this.state.movies && <MediaColumn results={this.state.movies} title="Trending Movies" />}
+            {this.state.shows && <MediaColumn results={this.state.shows} title="Trending TV Shows" />}
           </Grid>
         </DashboardContext.Provider>
       </Grid>
