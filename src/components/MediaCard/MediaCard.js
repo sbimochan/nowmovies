@@ -63,9 +63,9 @@ class MediaCard extends Component {
                 <header className={classes.movieHeader}>
                   <Typography className={classes.movieTitle} variant="h1" color="inherit">
                     {this.state.info.media_type === 'movie' ? (
-                      <MovieName info={this.state.info} />
+                      <MovieName info={this.state.info.title} />
                     ) : (
-                      <ShowName info={this.state.info} />
+                      <ShowName info={this.state.info.name} />
                     )}
                   </Typography>
                   <div className="vote">

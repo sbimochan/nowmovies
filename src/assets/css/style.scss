@@ -4,6 +4,8 @@ body {
 }
 .container-wrap {
 	background-color: #272c34;
+	padding-bottom: 40px;
+	min-height: 1000px;
 }
 .container {
 	margin: 0 auto;
@@ -123,4 +125,11 @@ $colors: (
 		--color: #{$color};
 		--hover: #{adjust-hue($color, 45deg)};
 	}
+}
+
+.page-footer{
+	height: 40px;
+	padding: 16px;
+	display: flex;
+	background-color: #FEFEFA;
 }

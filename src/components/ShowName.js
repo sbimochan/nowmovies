@@ -1,11 +1,9 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 
-const ShowName = ({ info }) => <span>{info.name}</span>;
+const ShowName = ({ name }) => <span>{name}</span>;
 
 ShowName.propTypes = {
-  info: PropTypes.shape({
-    name: PropTypes.string.isRequired
-  })
+  name: PropTypes.string.isRequired
 };
 export default ShowName;
