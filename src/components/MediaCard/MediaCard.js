@@ -89,7 +89,6 @@ class MediaCard extends Component {
                     {textTruncate(this.state.info.overview, 250)}
                   </Typography>
                 </div>
-                <div className={classes.footer}></div>
               </div>
               <div
                 className={classes.blurBackground}
@@ -97,7 +96,7 @@ class MediaCard extends Component {
                   backgroundImage: `url(${imgUrlMaker(this.state.info.backdrop_path || this.state.info.poster_path)})`
                 }}
               />
-              <div className="watch-trailer d-flex">
+              <div className={classes.actions}>
                 <Button
                   variant="contained"
                   color="secondary"
