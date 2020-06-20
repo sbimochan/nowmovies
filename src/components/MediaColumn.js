@@ -26,15 +26,25 @@ const MediaColumn = ({ results, title }) => (
 const CardSkeleton = () => {
   const useStyles = makeStyles(() => ({
     root: {
-      backgroundColor: '#353940'
+      backgroundColor: '#353940',
+      marginBottom: 10
+    },
+    wrapper: {
+      margin: '5px 10px'
     }
   }));
   const classes = useStyles();
 
   return (
-    <Box>
-      <Skeleton variant="text" width={200} classes={{ root: classes.root }} />
-      <Skeleton variant="rect" width={864} height={300} classes={{ root: classes.root }} />
+    <Box classes={{ root: classes.wrapper }}>
+      <Skeleton variant="text" width={200} height={25} classes={{ root: classes.root }} />
+      <Skeleton variant="text" width={70} height={20} classes={{ root: classes.root }} />
+      <Skeleton variant="text" width={200} height={50} classes={{ root: classes.root }} />
+      <Skeleton variant="rect" width={864} height={240} classes={{ root: classes.root }} />
+      <Box style={{ display: 'flex' }}>
+        <Skeleton variant="rect" width={170} height={35} classes={{ root: classes.root }} style={{ marginRight: 20 }} />
+        <Skeleton variant="rect" width={170} height={35} classes={{ root: classes.root }} />
+      </Box>
     </Box>
   );
 };
