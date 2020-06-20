@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ShowName from 'components/ShowName';
-import MovieName from 'components/MovieName';
 import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import { DashboardContext } from 'components/Dashboard';
-import { withStyles, Paper, Typography, Tooltip } from '@material-ui/core';
+import { withStyles, Paper, Typography, Tooltip, Link } from '@material-ui/core';
 import { getImdbUrl, youtubeSearchQueryGenerator, ytsQuery } from 'utils/interpolate';
 
 import styles from './styles';
@@ -63,15 +62,23 @@ class MediaCard extends Component {
                 <header className={classes.movieHeader}>
                   <Typography className={classes.movieTitle} variant="h1" color="inherit">
                     {this.state.info.media_type === 'movie' ? (
-                      <MovieName info={this.state.info.title} />
+                      <ShowName name={this.state.info.title} />
                     ) : (
-                      <ShowName info={this.state.info.name} />
+                      <ShowName name={this.state.info.name} />
                     )}
                   </Typography>
-                  <div className="vote">
-                    {this.state.info.vote_average}
-                    <span className="out-of-10">/10</span>
-                  </div>
+                  <Link
+                    underline="none"
+                    href={this.state.imdbUrl || '#'}
+                    target="_blank"
+                    title="Open in imdb"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="vote">
+                      {this.state.info.vote_average}
+                      <span className="out-of-10">/10</span>
+                    </div>
+                  </Link>
                   <Typography className={classes.duration} variant="body1" color="inherit">
                     {this.state.info.first_air_date || this.state.info.release_date}
                   </Typography>
