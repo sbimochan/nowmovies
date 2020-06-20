@@ -1,22 +1,27 @@
 {
   "files": {
-    "main.css": "/trending-movies-and-shows/static/css/main.5ae535cd.chunk.css",
-    "main.js": "/trending-movies-and-shows/static/js/main.131ed96a.chunk.js",
-    "main.js.map": "/trending-movies-and-shows/static/js/main.131ed96a.chunk.js.map",
-    "runtime-main.js": "/trending-movies-and-shows/static/js/runtime-main.19a60dd1.js",
-    "runtime-main.js.map": "/trending-movies-and-shows/static/js/runtime-main.19a60dd1.js.map",
-    "static/js/2.9e0336c1.chunk.js": "/trending-movies-and-shows/static/js/2.9e0336c1.chunk.js",
-    "static/js/2.9e0336c1.chunk.js.map": "/trending-movies-and-shows/static/js/2.9e0336c1.chunk.js.map",
-    "index.html": "/trending-movies-and-shows/index.html",
-    "precache-manifest.f7c7420f5f60717f0fdeb7cf1ec0ea70.js": "/trending-movies-and-shows/precache-manifest.f7c7420f5f60717f0fdeb7cf1ec0ea70.js",
-    "service-worker.js": "/trending-movies-and-shows/service-worker.js",
-    "static/css/main.5ae535cd.chunk.css.map": "/trending-movies-and-shows/static/css/main.5ae535cd.chunk.css.map",
-    "static/js/2.9e0336c1.chunk.js.LICENSE.txt": "/trending-movies-and-shows/static/js/2.9e0336c1.chunk.js.LICENSE.txt"
+    "main.css": "/nowmovies/static/css/main.c123cf03.chunk.css",
+    "main.js": "/nowmovies/static/js/main.35cf4c7e.chunk.js",
+    "main.js.map": "/nowmovies/static/js/main.35cf4c7e.chunk.js.map",
+    "runtime-main.js": "/nowmovies/static/js/runtime-main.0bf260ec.js",
+    "runtime-main.js.map": "/nowmovies/static/js/runtime-main.0bf260ec.js.map",
+    "static/js/2.9208eb44.chunk.js": "/nowmovies/static/js/2.9208eb44.chunk.js",
+    "static/js/2.9208eb44.chunk.js.map": "/nowmovies/static/js/2.9208eb44.chunk.js.map",
+    "static/js/3.51b932e5.chunk.js": "/nowmovies/static/js/3.51b932e5.chunk.js",
+    "static/js/3.51b932e5.chunk.js.map": "/nowmovies/static/js/3.51b932e5.chunk.js.map",
+    "static/js/4.6c895bf0.chunk.js": "/nowmovies/static/js/4.6c895bf0.chunk.js",
+    "static/js/4.6c895bf0.chunk.js.map": "/nowmovies/static/js/4.6c895bf0.chunk.js.map",
+    "index.html": "/nowmovies/index.html",
+    "precache-manifest.5ec86a9edde51db7ebcfb83a6068fd27.js": "/nowmovies/precache-manifest.5ec86a9edde51db7ebcfb83a6068fd27.js",
+    "service-worker.js": "/nowmovies/service-worker.js",
+    "static/css/main.c123cf03.chunk.css.map": "/nowmovies/static/css/main.c123cf03.chunk.css.map",
+    "static/js/2.9208eb44.chunk.js.LICENSE.txt": "/nowmovies/static/js/2.9208eb44.chunk.js.LICENSE.txt",
+    "static/js/3.51b932e5.chunk.js.LICENSE.txt": "/nowmovies/static/js/3.51b932e5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.19a60dd1.js",
-    "static/js/2.9e0336c1.chunk.js",
-    "static/css/main.5ae535cd.chunk.css",
-    "static/js/main.131ed96a.chunk.js"
+    "static/js/runtime-main.0bf260ec.js",
+    "static/js/2.9208eb44.chunk.js",
+    "static/css/main.c123cf03.chunk.css",
+    "static/js/main.35cf4c7e.chunk.js"
   ]
 }
