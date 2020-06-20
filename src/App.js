@@ -11,7 +11,7 @@ function App() {
       </Box>
       <footer className="page-footer">
         <Link
-          href="https://github.com/sbimochan"
+          href="https://github.com/sbimochan/nowmovies"
           target="_blank"
           rel="noopener noreferrer"
           variant="body2"
