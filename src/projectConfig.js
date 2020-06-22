@@ -1,6 +1,6 @@
 const apiUrl = 'https://api.themoviedb.org/3';
 const trendingUrl = '/trending';
-const posterSize = '/original';
+const posterSize = '/w780';
 const genres = '/genre/movie/list';
 
 export const projectConfig = {
