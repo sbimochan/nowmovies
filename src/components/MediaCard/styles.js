@@ -83,8 +83,8 @@ export default (theme) => ({
     right: 0,
     backgroundSize: 'cover !important',
     borderRadius: 11,
-    width: '80%',
-    backgroundPosition: '-100% 10% !important'
+    width: '80%'
+    // backgroundPosition: '-100% 10% !important'
   },
 
   [theme.breakpoints.down('sm')]: {
