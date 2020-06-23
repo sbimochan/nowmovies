@@ -86,6 +86,12 @@ export default (theme) => ({
     width: '80%'
     // backgroundPosition: '-100% 10% !important'
   },
+  imdbLink: {
+    color: 'inherit',
+    '&:hover': {
+      color: 'rgb(220, 0, 78)'
+    }
+  },
 
   [theme.breakpoints.down('sm')]: {
     fullWidth: { width: '100%' },

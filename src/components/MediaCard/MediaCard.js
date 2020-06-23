@@ -60,25 +60,27 @@ class MediaCard extends Component {
             <Paper className={classes.movieCard} elevation={20}>
               <div className={classes.infoSection}>
                 <header className={classes.movieHeader}>
-                  <Typography className={classes.movieTitle} variant="h1" color="inherit">
-                    {this.state.info.media_type === 'movie' ? (
-                      <ShowName name={this.state.info.title} />
-                    ) : (
-                      <ShowName name={this.state.info.name} />
-                    )}
-                  </Typography>
                   <Link
                     underline="none"
                     href={this.state.imdbUrl || '#'}
                     target="_blank"
                     title="Open in imdb"
                     rel="noopener noreferrer"
+                    className={classes.imdbLink}
+                    color="inherit"
                   >
-                    <div className="vote">
-                      {this.state.info.vote_average}
-                      <span className="out-of-10">/10</span>
-                    </div>
+                    <Typography className={classes.movieTitle} variant="h1" color="inherit">
+                      {this.state.info.media_type === 'movie' ? (
+                        <ShowName name={this.state.info.title} />
+                      ) : (
+                        <ShowName name={this.state.info.name} />
+                      )}
+                    </Typography>
                   </Link>
+                  <div className="vote">
+                    {this.state.info.vote_average}
+                    <span className="out-of-10">/10</span>
+                  </div>
                   <Typography className={classes.duration} variant="body1" color="inherit">
                     {this.state.info.first_air_date || this.state.info.release_date}
                   </Typography>
