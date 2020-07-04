@@ -105,7 +105,7 @@ export default (theme) => ({
       backgroundPosition: '50% 50% !important'
     },
     movieHeader: {
-      width: '100%',
+      width: '90%',
       marginTop: theme.spacing(3)
     },
     description: {
